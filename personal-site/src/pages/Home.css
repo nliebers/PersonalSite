@@ -10,11 +10,6 @@
     color: #04AA6D;
   }
   
-  input[type=text] {
-    border: 2px solid red;
-    border-radius: 4px;
-  }
-  
   #bigText {
     font-size: 50;
   }

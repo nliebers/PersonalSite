@@ -2,7 +2,9 @@ import React from 'react';
 import './Slideshow.css';
 import { IonImg } from '@ionic/react';
 
-const colors = ["assets/media/augusta.jpeg", "assets/media/augusta.jpeg", "assets/media/augusta.jpeg"];
+const golfCourseImages = ["assets/media/augusta.jpg", "assets/media/standrews.jpg", "assets/media/pebble.jpg"];
+const golfCourseTitles = ["Augusta National Golf Course", "St. Andrews Golf Courses", "Pebble Beach Golf Course"];
+
 const delay = 5000;
 
 function Slideshow() {
@@ -20,7 +22,7 @@ function Slideshow() {
     timeoutRef.current = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === colors.length - 1 ? 0 : prevIndex + 1
+          prevIndex === golfCourseImages.length - 1 ? 0 : prevIndex + 1
         ),
       delay
     );
@@ -36,17 +38,18 @@ function Slideshow() {
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
-        {colors.map((img, index) => (
+        {golfCourseImages.map((img, index) => (
           <div
             className="slide"
             key={index}>
                 <IonImg src={img}/>
+                <h2>{golfCourseTitles[index]}</h2>
             </div>
         ))}
       </div>
 
       <div className="slideshowDots">
-        {colors.map((_, idx) => (
+        {golfCourseImages.map((_, idx) => (
           <div
             key={idx}
             className={`slideshowDot${index === idx ? " active" : ""}`}

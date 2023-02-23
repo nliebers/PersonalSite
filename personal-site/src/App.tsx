@@ -10,10 +10,10 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, home, square } from 'ionicons/icons';
+import { document, ellipse, home, mail, square } from 'ionicons/icons';
 import Tab1 from './pages/Home';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import Resume from './pages/Resume';
+import ContactMe from './pages/ContactMe';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,11 +44,11 @@ const App: React.FC = () => (
           <Route exact path="/Home">
             <Tab1 />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/Resume">
+            <Resume />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/ContactMe">
+            <ContactMe />
           </Route>
           <Route exact path="/">
             <Redirect to="/Home" />
@@ -59,13 +59,13 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="Resume" href="/Resume">
+            <IonIcon aria-hidden="true" icon={document} />
+            <IonLabel>Resume</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="ContactMe" href="/ContactMe">
+            <IonIcon aria-hidden="true" icon={mail} />
+            <IonLabel>Contact Me</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

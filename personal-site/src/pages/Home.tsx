@@ -20,7 +20,7 @@ const Tab1: React.FC = () => {
             </p>
           </div>
           <br></br>
-        <h2>These are videos and pictures that relate to me.</h2>
+        <h2>These are images of my favorite golf courses.</h2>
         </article>
         <div id="homeMedia">
           <Slideshow/>
@@ -48,29 +48,6 @@ const Tab1: React.FC = () => {
             <li><p className="listText3">Golf</p></li>
           </ol>
         </div>
-        <div >
-          <h3>Contact Me</h3>
-          <form>
-            <fieldset>
-                <table>
-                  <tr>
-                    <td>Email?:</td>
-                    <td><input type="checkbox" name="yes?" value="yes?" title="yes?"/></td>
-                    <td>Phone or Email:</td>
-                    <td><input type="text" name="Cool Input" title="Cool input"/></td>
-                    <td>Reason:</td>
-                    <td><select name="Cool select" title="Cool select">
-                      <option>Work</option>
-                      <option>Personal</option>
-                      <option>Other</option>
-                    </select></td>
-                    <td><input type="submit"/></td>
-                    <td><input type="reset" /></td>
-                  </tr>
-                </table>
-              </fieldset>
-            </form>
-          </div>
       </IonContent>
     </IonPage>
   );
