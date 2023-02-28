@@ -10,10 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { document, ellipse, home, mail, square } from 'ionicons/icons';
+import { document, golf, home, mail } from 'ionicons/icons';
 import Tab1 from './pages/Home';
 import Resume from './pages/Resume';
 import ContactMe from './pages/ContactMe';
+import Golf from './pages/Golf'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -50,6 +51,9 @@ const App: React.FC = () => (
           <Route path="/ContactMe">
             <ContactMe />
           </Route>
+          <Route path="/Golf">
+            <Golf />
+          </Route>
           <Route exact path="/">
             <Redirect to="/Home" />
           </Route>
@@ -66,6 +70,10 @@ const App: React.FC = () => (
           <IonTabButton tab="ContactMe" href="/ContactMe">
             <IonIcon aria-hidden="true" icon={mail} />
             <IonLabel>Contact Me</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Golf" href="/Golf">
+            <IonIcon aria-hidden="true" icon={golf} />
+            <IonLabel>Golf</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
