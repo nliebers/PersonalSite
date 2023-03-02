@@ -10,11 +10,12 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { document, golf, home, mail } from 'ionicons/icons';
+import { document, film, golf, home, mail } from 'ionicons/icons';
 import Tab1 from './pages/Home';
 import Resume from './pages/Resume';
 import ContactMe from './pages/ContactMe';
-import Golf from './pages/Golf'
+import Golf from './pages/Golf';
+import Movie from './pages/Movie';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -54,6 +55,9 @@ const App: React.FC = () => (
           <Route path="/Golf">
             <Golf />
           </Route>
+          <Route path="/Movie">
+            <Movie />
+          </Route>
           <Route exact path="/">
             <Redirect to="/Home" />
           </Route>
@@ -74,6 +78,10 @@ const App: React.FC = () => (
           <IonTabButton tab="Golf" href="/Golf">
             <IonIcon aria-hidden="true" icon={golf} />
             <IonLabel>Golf</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Movie" href="/Movie">
+            <IonIcon aria-hidden="true" icon={film} />
+            <IonLabel>Movie Reviews</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

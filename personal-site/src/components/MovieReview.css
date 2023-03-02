@@ -1,0 +1,16 @@
+.reviewContainer{
+    display: flex;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 7em;
+    margin-top: 7em;
+    border: 5px solid #04AA6D;
+    border-style: groove;
+}
+
+.contentContainer {
+    align-items: center;
+    text-align: left;
+    margin-left: 2em;
+}
