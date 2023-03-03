@@ -1,5 +1,4 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './ContactMe.css';
 import ContactForm from '../components/ContactForm';
 
 const ContactMe: React.FC = () => {
@@ -7,7 +6,7 @@ const ContactMe: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Contact Me</IonTitle>
+          <IonTitle>Leave Feedback</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

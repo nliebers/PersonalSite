@@ -49,14 +49,14 @@ const App: React.FC = () => (
           <Route exact path="/Resume">
             <Resume />
           </Route>
-          <Route path="/ContactMe">
-            <ContactMe />
-          </Route>
           <Route path="/Golf">
             <Golf />
           </Route>
           <Route path="/Movie">
             <Movie />
+          </Route>
+          <Route path="/ContactMe">
+            <ContactMe />
           </Route>
           <Route exact path="/">
             <Redirect to="/Home" />
@@ -71,10 +71,6 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={document} />
             <IonLabel>Resume</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="ContactMe" href="/ContactMe">
-            <IonIcon aria-hidden="true" icon={mail} />
-            <IonLabel>Contact Me</IonLabel>
-          </IonTabButton>
           <IonTabButton tab="Golf" href="/Golf">
             <IonIcon aria-hidden="true" icon={golf} />
             <IonLabel>Golf</IonLabel>
@@ -82,6 +78,10 @@ const App: React.FC = () => (
           <IonTabButton tab="Movie" href="/Movie">
             <IonIcon aria-hidden="true" icon={film} />
             <IonLabel>Movie Reviews</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="ContactMe" href="/ContactMe">
+            <IonIcon aria-hidden="true" icon={mail} />
+            <IonLabel>Leave Feedback</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
