@@ -1,6 +1,7 @@
 {
   "name": "personal-site",
   "version": "0.0.1",
+  "homepage": "http://nliebers.github.io/PersonalSite/",
   "private": true,
   "dependencies": {
     "@capacitor/app": "4.1.1",
@@ -50,7 +51,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
