@@ -76,7 +76,8 @@
   "devDependencies": {
     "@capacitor/cli": "4.7.0",
     "@types/jest": "^26.0.24",
-    "@types/node": "^12.20.55"
+    "@types/node": "^12.20.55",
+    "gh-pages": "^5.0.0"
   },
   "description": "An Ionic project"
 }
