@@ -1,5 +1,18 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Golf.css';
+import Dropdown from 'react-dropdown'
+
+const changeClubDist = (option: any) => {
+    (document.getElementById('distanceText') as HTMLInputElement).textContent = distances[options.indexOf(option.value)];
+    (document.getElementById('speedText') as HTMLInputElement).textContent = clubSpeeds[options.indexOf(option.value)];
+}
+
+const options = ['Driver', '3 Wood', '4 Hybrid', '4 iron', '5 iron', '6 iron', '7 iron', '8 iron', '9 iron', 'Pitching Wedge', '52 Degree Wedge', '56 Degree Wedge', '60 Degree Wedge']
+const distances = ['275 Yards', '240 Yards', '210 Yards', '200 Yards', '190 Yards', '180 Yards', '165 Yards', '155 Yards', '140 Yards', '115 Yards', '105 Yards', '85 Yards', '65 Yards']
+const clubSpeeds = ['110 MPH', '107 MPH', '104 MPH', '102 MPH', '100 MPH', '99 MPH', '97 MPH', '96 MPH', '95 MPH', '85 MPH', '80 MPH', '77 MPH', '75 MPH']
+const defaultOption = options[0]
+let selectedDistance = distances[0]
+let selectedSpeed = clubSpeeds[0]
 
 const Golf: React.FC = () => {
   return (
@@ -12,10 +25,21 @@ const Golf: React.FC = () => {
       <IonContent fullscreen>
       <div className="nameContainer">
       <div>
-                        <h1>Noah <br/> Liebers</h1>
                     </div>
-                    <div >
+                    <div className='profile'>
                             <img src="assets/media/headshot.jpg" alt="noah" width="15%"/>
+                            <div >
+                                <h3>Select Club</h3>
+                                <Dropdown onChange={changeClubDist} arrowClosed={<span className="arrow right" />} arrowOpen={<span className="arrow down" />} className='dropdown' options={options} value={defaultOption} placeholder="Select an option"/>
+                                <div >
+                                    <h3>Selected Club Average Distance</h3>
+                                    <h4><span id="distanceText" className="underlined underline-clip">{selectedDistance}</span></h4>
+                                </div>
+                                <div >
+                                    <h3>Selected Club Average Speed</h3>
+                                    <h4><span id="speedText" className="underlined underline-clip">{selectedSpeed}</span></h4>
+                                </div>  
+                            </div>               
                         </div>
                 <div className="row">
                     <div>

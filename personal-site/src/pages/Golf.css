@@ -63,6 +63,48 @@
   .made-with-love a:hover {
     text-decoration: underline;
   }
+
+  .Dropdown-control {
+    display: flex;
+    column-gap: 5%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .Dropdown-option {
+    cursor: pointer;
+    background: linear-gradient(45deg, rgba(4,170,109,0.2), rgba(4,170,109,0.5));
+  }
+
+  .Dropdown-option:hover{
+    background-color:#04AA6D;
+ }
+
+  .profile {
+    display: flex;
+    column-gap: 20%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
   
   
   ::-webkit-scrollbar {
