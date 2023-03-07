@@ -4,7 +4,7 @@ body { background:rgb(30,30,40); }
 form { padding-top: 5%; padding-left: 10%; padding-right: 10%;}
 
 .feedback-input {
-  color:white;
+  color:black;
   font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
   font-size: 18px;
