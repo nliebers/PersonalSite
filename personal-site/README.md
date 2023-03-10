@@ -1,3 +1,8 @@
+Running locally:
+cd personal-site
+npm install
+ionic serve --external
+
 Update 2-17: I've restructured my personal website home page which I will be making for the course project.
 I've added some cool styling to some of my text and made new tabs for what I will eventually add.  I've also
 added some of the next CSS concepts we have learned this week.
@@ -8,3 +13,7 @@ Update 3-3: I have updated my contact form to be a feedback form.  This form wil
 is my golf page, which shows my recent golf scores and other information.  I also added a movie review page, where I can post my
 recent movies I've seen and my reviews of them.  Just to note, this page is a work in progress.  I plan on adding more reviews and
 cleaning up some styling.
+
+Update 3-10: I have spent the last week adding a dropdown for my golf page, which allows users to select a specific club value and see information displayed
+for the specific club that they pick.  The dropdown selections change color on hover.  I have also added a dark mode toggle which can be found on the top right
+of the home page.  I have also focused on cleaning up some of my existing pages, and I feel like I am starting to get to a good point for the mid term point.
