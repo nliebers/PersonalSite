@@ -10,7 +10,9 @@ const ContactMe: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <ContactForm></ContactForm>
+        <div id="feedbackBody">
+          <ContactForm></ContactForm>
+        </div>
       </IonContent>
     </IonPage>
   );

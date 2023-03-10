@@ -23,6 +23,7 @@ const Golf: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+        <div id="golfBody">
       <div className="nameContainer">
       <div>
                     </div>
@@ -225,6 +226,7 @@ const Golf: React.FC = () => {
                 </table>
             </div>
             </section>
+        </div>
       </IonContent>
     </IonPage>
   );

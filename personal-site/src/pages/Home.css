@@ -9,6 +9,16 @@
   h1, h2, h3 {
     color: #04AA6D;
   }
+
+  .header {
+    display: flex
+  }
+
+  .toggleDark {
+    align-items: center;
+    display: flex;
+    column-gap: 2%;
+  }
   
   #bigText {
     font-size: 50;

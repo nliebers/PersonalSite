@@ -2,6 +2,9 @@ import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
+  IonList,
+  IonItem,
+  IonToggle,
   IonLabel,
   IonRouterOutlet,
   IonTabBar,
@@ -10,7 +13,8 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { document, film, golf, home, mail } from 'ionicons/icons';
+import { film, golf, home, mail, moon } from 'ionicons/icons';
+import {document as file} from 'ionicons/icons';
 import Tab1 from './pages/Home';
 import Resume from './pages/Resume';
 import ContactMe from './pages/ContactMe';
@@ -38,8 +42,23 @@ import './theme/variables.css';
 
 setupIonicReact();
 
+const toggleDarkModeHandler = () => {
+  document.body.classList.toggle("dark");
+};
+
 const App: React.FC = () => (
   <IonApp>
+    <IonList className="ion-margin-top">
+            <IonItem>
+              <IonIcon slot="start" icon={moon} />
+              <IonLabel>Dark Mode</IonLabel>
+              <IonToggle
+                slot="end"
+                name="darkMode"
+                onIonChange={toggleDarkModeHandler}
+              />
+            </IonItem>
+          </IonList>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
@@ -68,7 +87,7 @@ const App: React.FC = () => (
             <IonLabel>Home</IonLabel>
           </IonTabButton>
           <IonTabButton tab="Resume" href="/Resume">
-            <IonIcon aria-hidden="true" icon={document} />
+            <IonIcon aria-hidden="true" icon={file} />
             <IonLabel>Resume</IonLabel>
           </IonTabButton>
           <IonTabButton tab="Golf" href="/Golf">

@@ -11,7 +11,9 @@ const Resume: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <ResumeComp></ResumeComp>
+        <div id="resumeBody">
+          <ResumeComp></ResumeComp>
+        </div>
       </IonContent>
     </IonPage>
   );

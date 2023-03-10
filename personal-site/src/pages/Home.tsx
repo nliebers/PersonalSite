@@ -1,16 +1,53 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import  Slideshow  from '../components/Slideshow'
 import './Home.css';
+import {
+  IonToggle,
+  IonIcon,
+  IonLabel
+} from '@ionic/react';
+import { moon } from 'ionicons/icons';
+
+let toggled = false;
+
+const toggleDarkModeHandler = () => {
+  const ids = ['homeBody', 'golfBody', 'movieBody', 'resumeBody', 'feedbackBody']
+  for(let i = 0; i < ids.length; i++){
+    let page = document.getElementById(ids[i]);
+    if (page && !toggled) {
+      page.style.color = 'rgb(74, 73, 71)';
+      page.style.backgroundColor = 'rgb(74, 73, 71)';
+      toggled = true;
+    }
+    else if (page && toggled) {
+      page.style.color = 'white';
+      page.style.backgroundColor = 'white';
+      toggled = false;
+    }
+  }
+};
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <div className="header">
+            <IonTitle>Home</IonTitle>
+            <div className="toggleDark">
+              <IonIcon slot="start" icon={moon} />
+              <IonLabel>Dark Mode</IonLabel>
+              <IonToggle
+                slot="end"
+                name="darkMode"
+                onIonChange={toggleDarkModeHandler}
+              />
+            </div>
+          </div>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
+      <div id="homeBody">
         <article>
           <h1 id="bigText">Noah Liebers' Website</h1>
           <div id="homeTextDiv">
@@ -48,6 +85,7 @@ const Tab1: React.FC = () => {
             <li><p className="listText3">Golf</p></li>
           </ol>
         </div>
+      </div>
       </IonContent>
     </IonPage>
   );
