@@ -3,16 +3,11 @@ import  Slideshow  from '../components/Slideshow'
 import  DarkModeToggle  from '../components/DarkModeToggle'
 import './Home.css';
 import {
-  IonToggle,
   IonIcon,
-  IonLabel
 } from '@ionic/react';
-import { logoGithub, logoLinkedin, logoSteam, logoTwitch, logoTwitter, moon } from 'ionicons/icons';
+import { logoGithub, logoLinkedin, logoSteam, logoTwitch, logoTwitter } from 'ionicons/icons';
 import { Browser } from '@capacitor/browser';
 
-const toggleDarkModeHandler = () => {
-  document.body.classList.toggle('dark');
-};
 
 const openWebpage = (url: string) => {
   Browser.open({ url: url });
