@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import  Slideshow  from '../components/Slideshow'
 import './Home.css';
 import {
@@ -6,26 +6,17 @@ import {
   IonIcon,
   IonLabel
 } from '@ionic/react';
-import { moon } from 'ionicons/icons';
-
-let toggled = false;
+import { logoGithub, logoLinkedin, logoSteam, logoTwitch, logoTwitter, moon } from 'ionicons/icons';
+import { Browser } from '@capacitor/browser';
 
 const toggleDarkModeHandler = () => {
-  const ids = ['homeBody', 'golfBody', 'movieBody', 'resumeBody', 'feedbackBody']
-  for(let i = 0; i < ids.length; i++){
-    let page = document.getElementById(ids[i]);
-    if (page && !toggled) {
-      page.style.color = 'rgb(74, 73, 71)';
-      page.style.backgroundColor = 'rgb(74, 73, 71)';
-      toggled = true;
-    }
-    else if (page && toggled) {
-      page.style.color = 'white';
-      page.style.backgroundColor = 'white';
-      toggled = false;
-    }
-  }
+  document.body.classList.toggle('dark');
 };
+
+const openWebpage = (url: string) => {
+  console.log("holy fuck")
+  Browser.open({ url: url });
+}
 
 const Tab1: React.FC = () => {
   return (
@@ -57,32 +48,49 @@ const Tab1: React.FC = () => {
             </p>
           </div>
           <br></br>
-        <h2>These are images of my favorite golf courses.</h2>
         </article>
+        <h2>Follow me on my socials</h2>
+        <div className="socialsContainer">
+          <IonButton onClick={() => openWebpage("https://twitter.com/liebdog1224")}>
+            <IonIcon aria-hidden="true" icon={logoTwitter}></IonIcon>
+          </IonButton>
+          <IonButton onClick={() => openWebpage("https://www.linkedin.com/in/noah-liebers-0048821a5/")}>
+            <IonIcon aria-hidden="true" icon={logoLinkedin}></IonIcon>
+          </IonButton>
+          <IonButton onClick={() => openWebpage("https://www.twitch.tv/liebdog24")}>
+            <IonIcon aria-hidden="true" icon={logoTwitch}></IonIcon>
+          </IonButton>
+          <IonButton onClick={() => openWebpage("https://github.com/nliebers")}>
+            <IonIcon aria-hidden="true" icon={logoGithub}></IonIcon>
+          </IonButton>
+          <IonButton onClick={() => openWebpage("https://steamcommunity.com/profiles/76561198306503919/")}>
+            <IonIcon aria-hidden="true" icon={logoSteam}></IonIcon>
+          </IonButton>
+        </div>
+        <h2>These are images of my favorite golf courses.</h2>
         <div id="homeMedia">
           <Slideshow/>
         </div>
-        <h2>See more things below</h2>
         <br></br>
         <h2>My top 3 favorite things</h2>
         <div id="lists">
           <ol id="list">
-            <h2>Colors</h2>
-            <li><p className="listText1">Green</p></li>
-            <li><p className="listText2">Blue</p></li>
-            <li><p className="listText3">Red</p></li>
+            <h2>Mountain Dew Flavors</h2>
+            <li><p className="listText1">Baja Blast</p></li>
+            <li><p className="listText2">Major Melon</p></li>
+            <li><p className="listText3">Spark</p></li>
           </ol>
           <ol id="list">
             <h2>Games</h2>
-            <li><p className="listText1">Half-Life</p></li>
-            <li><p className="listText2">Mario Kart</p></li>
-            <li><p className="listText3">The Last of Us</p></li>
+            <li><p className="listText1">Half-Life 1/2</p></li>
+            <li><p className="listText2">Mario Kart Double Dash</p></li>
+            <li><p className="listText3">Fallout 3</p></li>
           </ol>
           <ol id="list">
-            <h2>Sports</h2>
-            <li><p className="listText1">Baseball</p></li>
-            <li><p className="listText2">Football</p></li>
-            <li><p className="listText3">Golf</p></li>
+            <h2>Artists</h2>
+            <li><p className="listText1">Ween</p></li>
+            <li><p className="listText2">Red Hot Chili Peppers</p></li>
+            <li><p className="listText3">The Strokes</p></li>
           </ol>
         </div>
       </div>

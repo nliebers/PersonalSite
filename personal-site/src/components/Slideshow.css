@@ -12,6 +12,10 @@
     transition: ease 1500ms;
   }
   
+  .slideshowImg {
+    width: 60%
+  }
+
   .slide {
     display: inline-block;
     align-items: center;

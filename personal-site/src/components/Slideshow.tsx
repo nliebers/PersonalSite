@@ -1,6 +1,5 @@
 import React from 'react';
 import './Slideshow.css';
-import { IonImg } from '@ionic/react';
 
 const golfCourseImages = ["assets/media/augusta.jpg", "assets/media/standrews.jpg", "assets/media/pebble.jpg"];
 const golfCourseTitles = ["Augusta National Golf Course", "St. Andrews Golf Courses", "Pebble Beach Golf Course"];
@@ -42,7 +41,7 @@ function Slideshow() {
           <div
             className="slide"
             key={index}>
-                <IonImg src={img}/>
+                <img className= "slideshowImg" src={img} alt="slideshowImg"/>
                 <h2>{golfCourseTitles[index]}</h2>
             </div>
         ))}
