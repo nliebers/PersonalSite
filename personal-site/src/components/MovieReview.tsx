@@ -10,7 +10,7 @@ const MovieReview: React.FC<MovieReviewProps> = (props: MovieReviewProps) => {
   return (
     <div className="reviewContainer">
         <div className="imageContainer">
-            <img src={props.imgLink} alt="movie poster"/>
+            <img src={props.imgLink} alt="movie poster" width={'1000px'}/>
         </div>
         <div className="contentContainer">
             <p>{props.reviewContent}</p>

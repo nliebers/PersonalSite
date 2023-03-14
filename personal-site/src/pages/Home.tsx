@@ -1,5 +1,6 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import  Slideshow  from '../components/Slideshow'
+import  DarkModeToggle  from '../components/DarkModeToggle'
 import './Home.css';
 import {
   IonToggle,
@@ -14,7 +15,6 @@ const toggleDarkModeHandler = () => {
 };
 
 const openWebpage = (url: string) => {
-  console.log("holy fuck")
   Browser.open({ url: url });
 }
 
@@ -25,15 +25,7 @@ const Tab1: React.FC = () => {
         <IonToolbar>
           <div className="header">
             <IonTitle>Home</IonTitle>
-            <div className="toggleDark">
-              <IonIcon slot="start" icon={moon} />
-              <IonLabel>Dark Mode</IonLabel>
-              <IonToggle
-                slot="end"
-                name="darkMode"
-                onIonChange={toggleDarkModeHandler}
-              />
-            </div>
+            <DarkModeToggle/>
           </div>
         </IonToolbar>
       </IonHeader>
