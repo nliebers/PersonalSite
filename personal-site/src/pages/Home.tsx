@@ -13,6 +13,37 @@ const openWebpage = (url: string) => {
   Browser.open({ url: url });
 }
 
+let file: any = null;
+
+const handleSubmission = () => {
+  const formData = new FormData();
+
+  formData.append('File', file);
+
+  fetch(
+    'https://freeimage.host/api/1/upload?key=6d207e02198a847aa98d0a2a901485a5',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: formData,
+    }
+  )
+    .then((response) => response.json())
+    .then((result) => {
+      console.log('Success:', result);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+};
+
+const changeHandler = (event: any) => {
+  file = event.target.files[0];
+};
+
+
 const Tab1: React.FC = () => {
   return (
     <IonPage>
@@ -58,6 +89,12 @@ const Tab1: React.FC = () => {
         <div id="homeMedia">
           <Slideshow/>
         </div>
+        <div>
+			<input type="file" name="file" onChange={changeHandler}/>
+			<div>
+				<button onClick={handleSubmission}>Submit</button>
+			</div>
+		</div>
         <br></br>
         <h2>My top 3 favorite things</h2>
         <div id="lists">

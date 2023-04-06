@@ -5,6 +5,7 @@
     --color-4: #e83611;
     --color-5: #f9002f;
   }
+
   
   h1, h2, h3 {
     color: #04AA6D;
@@ -111,7 +112,13 @@
     -webkit-background-clip: text;
     color: transparent;
   }
-  
+  .addImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6%;
+  }
   .listText2 {
     font-family: "Exo", sans-serif;
     font-size: 3vw;

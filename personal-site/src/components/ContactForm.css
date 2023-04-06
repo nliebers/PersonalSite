@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body { background:rgb(30,30,40); }
-form { padding-top: 5%; padding-left: 10%; padding-right: 10%;}
+form { padding-left: 10%; padding-right: 10%;}
 
 .feedback-input {
   color:#04AA6D;
