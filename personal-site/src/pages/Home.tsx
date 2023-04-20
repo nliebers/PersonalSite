@@ -90,6 +90,7 @@ const Tab1: React.FC = () => {
           <Slideshow/>
         </div>
         <div>
+      <h2>Add you own golf course images</h2>
 			<input type="file" name="file" onChange={changeHandler}/>
 			<div>
 				<button onClick={handleSubmission}>Submit</button>
@@ -99,14 +100,14 @@ const Tab1: React.FC = () => {
         <h2>My top 3 favorite things</h2>
         <div id="lists">
           <ol id="list">
-            <h2>Mountain Dew Flavors</h2>
-            <li><p className="listText1">Baja Blast</p></li>
-            <li><p className="listText2">Major Melon</p></li>
-            <li><p className="listText3">Spark</p></li>
+            <h2>Fruit</h2>
+            <li><p className="listText1">Apple</p></li>
+            <li><p className="listText2">Orange</p></li>
+            <li><p className="listText3">Banana</p></li>
           </ol>
           <ol id="list">
             <h2>Games</h2>
-            <li><p className="listText1">Half-Life 1/2</p></li>
+            <li><p className="listText1">Half-Life</p></li>
             <li><p className="listText2">Mario Kart Double Dash</p></li>
             <li><p className="listText3">Fallout 3</p></li>
           </ol>

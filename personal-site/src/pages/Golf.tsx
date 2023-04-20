@@ -1,8 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonIcon, IonImg, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Golf.css';
 import Dropdown from 'react-dropdown'
 import { Storage } from '@ionic/storage';
 import GolfScore from '../components/GolfScore';
+import { checkmark, golf, golfOutline, golfSharp } from 'ionicons/icons';
 
 const store = new Storage();
 store.create();
@@ -26,6 +27,27 @@ const changeClubDist = (option: any) => {
     (document.getElementById('speedText') as HTMLInputElement).textContent = clubSpeeds[options.indexOf(option.value)];
 }
 
+const createNewRow = (date: string, course: string, netScore: string, holes: string, score: string) => {
+    const scoreContainer = (document.getElementById('scoreTable'));
+    const row = document.createElement('tr');
+    const rowDate = document.createElement('td');
+    rowDate.innerHTML = date;
+    const rowCourse = document.createElement('td');
+    rowCourse.innerHTML = course;
+    const rowNetScore = document.createElement('td');
+    rowNetScore.innerHTML = netScore;
+    const rowHoles = document.createElement('td');
+    rowHoles.innerHTML = holes;
+    const rowScore = document.createElement('td');
+    rowScore.innerHTML = score;
+    row.appendChild(rowDate);
+    row.appendChild(rowCourse);
+    row.appendChild(rowScore);
+    row.appendChild(rowNetScore);
+    row.appendChild(rowHoles);
+    scoreContainer?.appendChild(row);
+}
+
 const addNewScore = () => {
     const date = (document.getElementById('date') as HTMLInputElement).value;
     const course = (document.getElementById('course') as HTMLInputElement).value;
@@ -34,6 +56,7 @@ const addNewScore = () => {
     const holes = (document.getElementById('holes') as HTMLInputElement).value;
     console.log(date, course, holes, score, netScore);
     store.set(date, [course, holes, score, netScore]);
+    createNewRow(date, course, netScore, holes, score);
 }
 
 updateScores();
@@ -84,7 +107,7 @@ const Golf: React.FC = () => {
                         <h2>Country: <span className="underlined underline-clip">USA</span></h2>
                     </div>
                     <div>
-                        <h2>Handicap: <span className="underlined underline-clip">--</span></h2>
+                        <h2>Handicap: <span className="underlined underline-clip">16.6</span></h2>
                     </div>
                     <div>
                         <h2>College: <span className="underlined underline-clip">Nebraska</span></h2>
@@ -116,19 +139,40 @@ const Golf: React.FC = () => {
             </div>
             </section>
         </div>
-        <form onSubmit={addNewScore}>
-            <h3>Date</h3>
-            <input type="date" id="date" name="date"/>
-            <h3>Course</h3>
-            <input type="course" id="course" name="couse"/>
-            <h3>Holes</h3>
-            <input type="holes" id="holes" name="holes"/>
-            <h3>Score</h3>
-            <input type="score" id="score" name="score" />
-            <h3>Net Score</h3>
-            <input type="net score" id="net score" name="net score"/>
-            <input className="golfSubmit" type="submit" value="SUBMIT"/>
-        </form>
+        <h1>Add Score(s)</h1>
+        <div className='scoreContainer'>
+            <div className='enterScore'>
+                <form>
+                    <div className='textInp'>
+                        <h3>Date</h3>
+                        <input type="date" id="date" name="date" className='inp'/>
+                    </div>
+                    <div className='textInp'>           
+                        <h3>Course</h3>
+                        <input type="course" id="course" name="couse" className='inp'/>
+                    </div>
+                    
+                    <div className='textInp'>           
+                        <h3>Holes </h3>
+                        <input type="holes" id="holes" name="holes" className='inp'/>
+                    </div>
+                    <div className='textInp'>           
+                        <h3>Score</h3>
+                        <input type="score" id="score" name="score" className='inp'/>
+                    </div>
+                    <div className='textInp'>           
+                        <h3>Net Score</h3>
+                        <input type="net score" id="net score" name="net score" className='inp'/>
+                    </div>
+                </form>
+                <IonButton className="golfSubmit" onClick={addNewScore}>
+                    <IonIcon aria-hidden="true" icon={checkmark}/>
+                </IonButton>
+            </div>
+            <div>
+                <img src="assets/media/augustanational.jpg" width={"50%"} alt="layout"/>
+            </div>
+        </div>
       </IonContent>
     </IonPage>
   );
