@@ -17,3 +17,5 @@ cleaning up some styling.
 Update 3-10: I have spent the last week adding a dropdown for my golf page, which allows users to select a specific club value and see information displayed
 for the specific club that they pick.  The dropdown selections change color on hover.  I have also added a dark mode toggle which can be found on the top right
 of the home page.  I have also focused on cleaning up some of my existing pages, and I feel like I am starting to get to a good point for the mid term point.
+
+Update May: Added all features that I proposed for class. Added local database storage for storing golf scores and functionality for dynamically rendering and stored scores on the golf page.  Also added a music review page.
